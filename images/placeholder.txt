@@ -1,0 +1,16 @@
+Please add the following images to complete the website:
+
+1. jk-fenner-logo.png - Main colored logo for header
+2. jk-fenner-logo-white.png - White version of logo for footer
+
+Product Images (in images/products/ folder):
+1. oil-seal.jpg - Oil seal product image
+2. transmission-belt.jpg - Power transmission belt image
+3. gear-box.jpg - Industrial gear box image 
+4. ev-product.jpg - EV component kit image
+5. hose.jpg - Radiator hose image
+6. belt-tensioner.jpg - Belt tensioner image
+7. pulley.jpg - Industrial pulley image
+
+You can source appropriate images from the official JK Fenner website 
+(https://jkfenner.com/) or use stock product photos that match the descriptions. 

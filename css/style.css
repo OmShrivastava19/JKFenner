@@ -1,0 +1,611 @@
+/* 
+* JK Fenner E-commerce Website
+* Main Stylesheet
+*/
+
+:root {
+    --primary-color: #0056b3;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --body-font: 'Roboto', sans-serif;
+    --heading-font: 'Roboto', sans-serif;
+    --border-radius: 4px;
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* General Styles */
+body {
+    font-family: var(--body-font);
+    color: #333;
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: #003d7a;
+}
+
+.btn {
+    transition: var(--transition);
+    border-radius: var(--border-radius);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #004a99;
+    border-color: #004a99;
+}
+
+.section-title {
+    position: relative;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin-top: 10px;
+}
+
+/* Header Styles */
+.top-nav {
+    font-size: 0.85rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.top-nav a {
+    color: #666;
+}
+
+.top-nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Header Logo */
+.header-logo {
+    max-height: 36px;
+    width: auto;
+}
+
+/* Language Selector */
+#languageDropdown {
+    color: #666;
+}
+
+#languageDropdown:hover {
+    color: var(--primary-color);
+}
+
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border-radius: var(--border-radius);
+}
+
+.dropdown-item {
+    transition: var(--transition);
+}
+
+.dropdown-item:hover {
+    background-color: #f0f7ff;
+}
+
+.dropdown-menu .dropdown-item img {
+    margin-right: 8px;
+    width: 18px;
+    height: auto;
+}
+
+/* Search Box Styles */
+.search-container {
+    max-width: 500px;
+}
+
+.search-input {
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    border: 1px solid #ddd;
+    padding-left: 15px;
+    height: 42px;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.search-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(0,86,179,0.15);
+}
+
+.search-container .btn {
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    height: 42px;
+}
+
+/* Vehicle Registration Number Plate */
+.number-plate-container {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.indian-number-plate {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.number-plate-flag {
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 8px 10px;
+    min-width: 42px;
+    border-right: 1px solid #ddd;
+}
+
+.number-plate-flag img {
+    border: 1px solid #ddd;
+}
+
+.number-plate-input {
+    flex: 1;
+    border: none !important;
+    border-radius: 0 !important;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+    font-weight: bold;
+    padding-left: 15px;
+    box-shadow: none !important;
+}
+
+.search-btn {
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    border: none;
+    padding: 0.5rem 1.25rem;
+}
+
+#country-flag-dropdown .dropdown-item {
+    display: flex;
+    align-items: center;
+}
+
+#country-flag-dropdown .dropdown-item img {
+    margin-right: 10px;
+}
+
+/* Payment Methods */
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.payment-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+
+.payment-icon {
+    height: 24px;
+    width: auto;
+    margin: 3px;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+    transition: transform 0.2s ease;
+}
+
+.payment-icon:hover {
+    transform: translateY(-2px);
+}
+
+/* App Store Buttons */
+.app-store-buttons img {
+    transition: transform 0.2s ease;
+    filter: brightness(1.1);
+}
+
+.app-store-buttons img:hover {
+    transform: translateY(-2px);
+}
+
+/* Product Card Styles */
+.product-card {
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-card .card-img-top {
+    height: 200px;
+    object-fit: contain;
+    padding: 20px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.product-card .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.product-card .card-text {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.original-price {
+    font-size: 0.9rem;
+    margin-left: 5px;
+}
+
+.rating {
+    font-size: 0.85rem;
+}
+
+/* Category Card Styles */
+.category-card {
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: white;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.icon-container {
+    padding: 15px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: rgba(0, 86, 179, 0.1);
+}
+
+.category-card h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* AI Recommendations Section */
+.ai-recommendations .card {
+    border: none;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+}
+
+.recommended-products .card {
+    border: 1px solid #eee;
+    transition: var(--transition);
+}
+
+.recommended-products .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.recommended-products .card-img-top {
+    height: 120px;
+    object-fit: contain;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+/* Chat Widget */
+.chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.chat-toggle {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.chat-box {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    width: 350px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+
+.chat-body {
+    height: 300px;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+}
+
+.message {
+    margin-bottom: 15px;
+    clear: both;
+}
+
+.message.bot .message-content {
+    background-color: white;
+    color: #333;
+    border-radius: 15px 15px 15px 0;
+    float: left;
+}
+
+.message.user .message-content {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 15px 15px 0 15px;
+    float: right;
+}
+
+.message-content {
+    padding: 10px 15px;
+    max-width: 80%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.timestamp {
+    font-size: 0.7rem;
+    color: #999;
+    clear: both;
+    display: block;
+    margin-top: 5px;
+}
+
+.message.bot .timestamp {
+    text-align: left;
+}
+
+.message.user .timestamp {
+    text-align: right;
+}
+
+/* Footer Styles */
+footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #1a1a1a;
+}
+
+footer h5 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer ul li a {
+    transition: var(--transition);
+    color: rgba(255,255,255,0.5);
+}
+
+footer ul li a:hover {
+    color: white !important;
+    padding-left: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .category-menu {
+        flex-direction: column;
+    }
+    
+    .mega-menu {
+        padding: 10px;
+    }
+    
+    .header-logo {
+        max-height: 30px;
+    }
+    
+    .search-container {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+    
+    .payment-icon {
+        height: 20px;
+        margin: 2px;
+    }
+}
+
+@media (max-width: 768px) {
+    .vehicle-search .card {
+        margin-bottom: 15px;
+    }
+    
+    .chat-box {
+        width: 300px;
+    }
+    
+    .product-card .card-img-top {
+        height: 150px;
+    }
+    
+    .category-card {
+        padding: 15px;
+    }
+    
+    .icon-container {
+        padding: 10px;
+    }
+    
+    .indian-number-plate {
+        flex-direction: column;
+    }
+    
+    .number-plate-flag {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        width: 100%;
+        padding: 5px;
+    }
+    
+    .payment-methods {
+        align-items: center;
+    }
+    
+    .payment-icons {
+        justify-content: center;
+    }
+    
+    .search-input, .search-container .btn {
+        height: 38px;
+    }
+    
+    .header-logo {
+        max-height: 28px;
+    }
+}
+
+/* Vehicle Parts Finder Styles */
+.vehicle-parts-finder {
+    background-color: #f8f9fa;
+}
+
+.finder-container {
+    transition: all 0.3s ease;
+}
+
+.finder-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.vehicle-image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.plate-input {
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-right: 150px;
+}
+
+.plate-input::placeholder {
+    opacity: 0.5;
+}
+
+.plate-format {
+    pointer-events: none;
+}
+
+#vehicleSearchTabs .nav-link {
+    color: #495057;
+    border: 1px solid #dee2e6;
+    padding: 0.75rem 1.25rem;
+    transition: all 0.3s ease;
+}
+
+#vehicleSearchTabs .nav-link:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+#vehicleSearchTabs .nav-link.active {
+    color: #fff;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.country-select button {
+    text-align: left;
+    font-weight: 500;
+}
+
+.country-option {
+    display: flex;
+    align-items: center;
+}
+
+/* Animation for the find parts button */
+.vehicle-parts-finder .btn-primary {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.vehicle-parts-finder .btn-primary::after {
+    content: '';
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 1s ease;
+    z-index: -1;
+}
+
+.vehicle-parts-finder .btn-primary:hover::after {
+    left: 100%;
+} 

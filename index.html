@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JK Fenner - Automotive & Industrial Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Top Header with Language Selector -->
+    <div class="top-nav bg-light py-2 border-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item me-3"><a href="tel:+914522461700" class="text-decoration-none text-dark"><i class="fas fa-phone me-2"></i>+91 452 2461700</a></li>
+                        <li class="list-inline-item"><a href="mailto:info@jkfenner.com" class="text-decoration-none text-dark"><i class="fas fa-envelope me-2"></i>info@jkfenner.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 text-end">
+                    <div class="d-inline-block me-3">
+                        <div class="dropdown">
+                            <a class="dropdown-toggle text-decoration-none" href="#" role="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-globe me-1"></i> English
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                                <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                                <li><a class="dropdown-item" href="#" data-lang="hi">हिन्दी (Hindi)</a></li>
+                                <li><a class="dropdown-item" href="#" data-lang="es">Español (Spanish)</a></li>
+                                <li><a class="dropdown-item" href="#" data-lang="zh">中文 (Chinese)</a></li>
+                                <li><a class="dropdown-item" href="#" data-lang="ar">العربية (Arabic)</a></li>
+                                <li><a class="dropdown-item" href="#" data-lang="fr">Français (French)</a></li>
+                                <li><a class="dropdown-item" href="#" data-lang="de">Deutsch (German)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="#" class="me-3"><i class="fas fa-user me-1"></i>Login</a>
+                    <a href="#"><i class="fas fa-shopping-cart me-1"></i>Cart <span class="badge bg-primary rounded-pill">0</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header with Search -->
+    <header class="py-3 border-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 col-6 mb-2 mb-md-0">
+                    <a href="index.html" class="d-flex align-items-center text-dark text-decoration-none">
+                        <img src="images/jk-fenner-logo.png" alt="JK Fenner Logo" class="header-logo">
+                    </a>
+                </div>
+                <div class="col-md-6 mb-2 mb-md-0">
+                    <div class="search-container mx-auto">
+                        <div class="input-group">
+                            <input type="text" class="form-control search-input" placeholder="Search for parts, products, brands...">
+                            <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 text-end">
+                    <a href="#" class="btn btn-outline-primary me-2 d-none d-md-inline-block">Find a Distributor</a>
+                    <a href="contact.html" class="btn btn-outline-secondary">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Vehicle Search Section -->
+    <section class="vehicle-search py-5" style="background: linear-gradient(135deg, #0A4D68, #088395);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                        <div class="row g-0">
+                            <!-- Left Panel with Vehicle Image -->
+                            <div class="col-md-4 d-none d-md-block bg-light">
+                                <div class="h-100 d-flex flex-column justify-content-between p-4">
+                                    <div>
+                                        <h3 class="font-weight-bold text-primary">Find Parts by Vehicle</h3>
+                                        <p class="mb-4 text-muted">Get precise matches for your specific make and model.</p>
+                                    </div>
+                                    <img src="images/products/car-transparent.png" alt="Vehicle illustration" class="img-fluid mt-auto">
+                                </div>
+                            </div>
+                            
+                            <!-- Right Panel with Search Options -->
+                            <div class="col-md-8">
+                                <div class="p-4 p-md-5">
+                                    <h4 class="mb-4 fw-bold d-md-none">Find Parts by Vehicle</h4>
+                                    
+                                    <!-- Search Tabs -->
+                                    <ul class="nav nav-pills nav-fill mb-4" id="vehicleSearchTabs" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active rounded-pill" id="reg-tab" data-bs-toggle="tab" data-bs-target="#reg-search" type="button" role="tab" aria-selected="true">
+                                                <i class="fas fa-car-side me-2"></i>By Registration
+                                            </button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link rounded-pill" id="model-tab" data-bs-toggle="tab" data-bs-target="#model-search" type="button" role="tab" aria-selected="false">
+                                                <i class="fas fa-cogs me-2"></i>By Model
+                                            </button>
+                                        </li>
+                                    </ul>
+                                    
+                                    <!-- Tab Content -->
+                                    <div class="tab-content" id="vehicleSearchContent">
+                                        <!-- Registration Search Tab -->
+                                        <div class="tab-pane fade show active" id="reg-search" role="tabpanel" aria-labelledby="reg-tab">
+                                            <div class="registration-search">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Find with Vehicle Registration</label>
+                                                    <div class="number-plate-container position-relative">
+                                                        <div class="indian-number-plate">
+                                                            <div class="number-plate-flag">
+                                                                <div class="d-flex flex-column align-items-center p-1" id="country-flag-container" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                    <img src="https://flagcdn.com/w20/in.png" width="20" alt="India" id="selected-flag">
+                                                                    <span style="font-size: 8px; font-weight: bold;">IND</span>
+                                                                </div>
+                                                                <div class="dropdown-menu" id="country-flag-dropdown">
+                                                                    <a class="dropdown-item" href="#" data-country="in" data-code="IND"><img src="https://flagcdn.com/w20/in.png" width="20" alt="India"> India</a>
+                                                                    <a class="dropdown-item" href="#" data-country="gb" data-code="GBR"><img src="https://flagcdn.com/w20/gb.png" width="20" alt="UK"> UK</a>
+                                                                    <a class="dropdown-item" href="#" data-country="jp" data-code="JPN"><img src="https://flagcdn.com/w20/jp.png" width="20" alt="Japan"> Japan</a>
+                                                                    <a class="dropdown-item" href="#" data-country="us" data-code="USA"><img src="https://flagcdn.com/w20/us.png" width="20" alt="USA"> USA</a>
+                                                                    <a class="dropdown-item" href="#" data-country="ae" data-code="UAE"><img src="https://flagcdn.com/w20/ae.png" width="20" alt="UAE"> UAE</a>
+                                                                </div>
+                                                            </div>
+                                                            <input type="text" class="form-control number-plate-input" placeholder="Enter Vehicle Registration Number">
+                                                            <button class="btn btn-primary search-btn" type="button">Search</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-text text-center mt-2">Example: MH 01 AA 1234 or DL 01 AB 1234</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Model Search Tab -->
+                                        <div class="tab-pane fade" id="model-search" role="tabpanel" aria-labelledby="model-tab">
+                                            <div class="row g-3">
+                                                <div class="col-md-4">
+                                                    <select class="form-select form-select-lg">
+                                                        <option selected>Select Make</option>
+                                                        <option>Maruti Suzuki</option>
+                                                        <option>Hyundai</option>
+                                                        <option>Tata</option>
+                                                        <option>Mahindra</option>
+                                                        <option>Honda</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <select class="form-select form-select-lg">
+                                                        <option selected>Select Model</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <select class="form-select form-select-lg">
+                                                        <option selected>Select Year</option>
+                                                        <option>2023</option>
+                                                        <option>2022</option>
+                                                        <option>2021</option>
+                                                        <option>2020</option>
+                                                        <option>2019</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-12">
+                                                    <button class="btn btn-primary btn-lg w-100">
+                                                        <i class="fas fa-search me-2"></i>Search Parts
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Featured Products Section -->
+        <section class="featured-products py-5">
+            <div class="container">
+                <h2 class="section-title mb-4">Featured Products</h2>
+                <div class="row">
+                    <!-- Product 1 -->
+                    <div class="col-md-3 mb-4">
+                        <div class="card product-card h-100">
+                            <div class="badge bg-danger position-absolute top-0 end-0 m-2">New</div>
+                            <img src="images/products/oil-seal.jpg" class="card-img-top" alt="Oil Seal">
+                            <div class="card-body">
+                                <h5 class="card-title">Premium Oil Seal</h5>
+                                <p class="card-text">High-performance oil seal for automotive applications</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="price-section">
+                                        <span class="price">₹799</span>
+                                        <span class="original-price text-muted"><del>₹999</del></span>
+                                    </div>
+                                    <div class="rating">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star-half-alt text-warning"></i>
+                                        <span class="ms-1">(4.5)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white border-top-0">
+                                <button class="btn btn-primary w-100">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 2 -->
+                    <div class="col-md-3 mb-4">
+                        <div class="card product-card h-100">
+                            <img src="images/products/transmission-belt.jpg" class="card-img-top" alt="Transmission Belt">
+                            <div class="card-body">
+                                <h5 class="card-title">Power Transmission Belt</h5>
+                                <p class="card-text">Durable transmission belt for industrial applications</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="price-section">
+                                        <span class="price">₹1,299</span>
+                                        <span class="original-price text-muted"><del>₹1,599</del></span>
+                                    </div>
+                                    <div class="rating">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="far fa-star text-warning"></i>
+                                        <span class="ms-1">(4.0)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white border-top-0">
+                                <button class="btn btn-primary w-100">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 3 -->
+                    <div class="col-md-3 mb-4">
+                        <div class="card product-card h-100">
+                            <div class="badge bg-success position-absolute top-0 end-0 m-2">Bestseller</div>
+                            <img src="images/products/gear-box.jpg" class="card-img-top" alt="Gear Box">
+                            <div class="card-body">
+                                <h5 class="card-title">Industrial Gear Box</h5>
+                                <p class="card-text">High-torque gear box for heavy-duty applications</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="price-section">
+                                        <span class="price">₹8,999</span>
+                                        <span class="original-price text-muted"><del>₹10,499</del></span>
+                                    </div>
+                                    <div class="rating">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <span class="ms-1">(5.0)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white border-top-0">
+                                <button class="btn btn-primary w-100">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 4 -->
+                    <div class="col-md-3 mb-4">
+                        <div class="card product-card h-100">
+                            <img src="images/products/ev-product.jpg" class="card-img-top" alt="EV Product">
+                            <div class="card-body">
+                                <h5 class="card-title">EV Component Kit</h5>
+                                <p class="card-text">Advanced components for electric vehicle applications</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="price-section">
+                                        <span class="price">₹5,499</span>
+                                        <span class="original-price text-muted"><del>₹6,999</del></span>
+                                    </div>
+                                    <div class="rating">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="far fa-star text-warning"></i>
+                                        <span class="ms-1">(4.2)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white border-top-0">
+                                <button class="btn btn-primary w-100">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- AI Recommendations Section -->
+        <section class="ai-recommendations py-5 bg-light">
+            <div class="container">
+                <h2 class="section-title mb-4">Personalized Recommendations</h2>
+                <div class="recommendation-container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-robot me-2 text-primary"></i>AI-Powered Suggestions For Your Vehicle</h5>
+                                    <p class="card-text">Based on your recent searches and purchase history, our AI suggests these parts might be compatible with your vehicle.</p>
+                                    
+                                    <div class="recommended-products row mt-4">
+                                        <!-- Recommendation 1 -->
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card h-100">
+                                                <img src="images/products/hose.jpg" class="card-img-top" alt="Radiator Hose">
+                                                <div class="card-body">
+                                                    <h6 class="card-title">Premium Radiator Hose</h6>
+                                                    <div class="d-flex justify-content-between">
+                                                        <span class="price">₹599</span>
+                                                        <button class="btn btn-sm btn-outline-primary">Add</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Recommendation 2 -->
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card h-100">
+                                                <img src="images/products/belt-tensioner.jpg" class="card-img-top" alt="Belt Tensioner">
+                                                <div class="card-body">
+                                                    <h6 class="card-title">Heavy-Duty Belt Tensioner</h6>
+                                                    <div class="d-flex justify-content-between">
+                                                        <span class="price">₹1,299</span>
+                                                        <button class="btn btn-sm btn-outline-primary">Add</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Recommendation 3 -->
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card h-100">
+                                                <img src="images/products/pulley.jpg" class="card-img-top" alt="Pulley">
+                                                <div class="card-body">
+                                                    <h6 class="card-title">Industrial Grade Pulley</h6>
+                                                    <div class="d-flex justify-content-between">
+                                                        <span class="price">₹899</span>
+                                                        <button class="btn btn-sm btn-outline-primary">Add</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-chart-line me-2 text-success"></i>Predictive Maintenance</h5>
+                                    <p class="card-text">Based on your vehicle usage pattern, these parts may need attention in the next 3 months:</p>
+                                    
+                                    <ul class="list-group mt-3">
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="fw-bold">Timing Belt</span>
+                                                <div class="text-muted small">Estimated lifespan: 2 months</div>
+                                            </div>
+                                            <span class="badge bg-warning rounded-pill">Soon</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="fw-bold">Oil Seal Set</span>
+                                                <div class="text-muted small">Estimated lifespan: 3 months</div>
+                                            </div>
+                                            <span class="badge bg-info rounded-pill">Monitor</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="fw-bold">Drive Belt</span>
+                                                <div class="text-muted small">Estimated lifespan: 1 month</div>
+                                            </div>
+                                            <span class="badge bg-danger rounded-pill">Urgent</span>
+                                        </li>
+                                    </ul>
+                                    
+                                    <button class="btn btn-success mt-3 w-100">View Full Maintenance Plan</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Popular Categories Section -->
+        <section class="popular-categories py-5">
+            <div class="container">
+                <h2 class="section-title mb-4">Popular Categories</h2>
+                <div class="row">
+                    <!-- Category 1 -->
+                    <div class="col-md-2 col-6 mb-4">
+                        <div class="category-card text-center">
+                            <div class="icon-container mb-3">
+                                <i class="fas fa-cog fa-3x text-primary"></i>
+                            </div>
+                            <h5>Oil Seals</h5>
+                            <p class="text-muted small">250+ Products</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Category 2 -->
+                    <div class="col-md-2 col-6 mb-4">
+                        <div class="category-card text-center">
+                            <div class="icon-container mb-3">
+                                <i class="fas fa-water fa-3x text-primary"></i>
+                            </div>
+                            <h5>Hoses</h5>
+                            <p class="text-muted small">180+ Products</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Category 3 -->
+                    <div class="col-md-2 col-6 mb-4">
+                        <div class="category-card text-center">
+                            <div class="icon-container mb-3">
+                                <i class="fas fa-cogs fa-3x text-primary"></i>
+                            </div>
+                            <h5>Gear Boxes</h5>
+                            <p class="text-muted small">120+ Products</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Category 4 -->
+                    <div class="col-md-2 col-6 mb-4">
+                        <div class="category-card text-center">
+                            <div class="icon-container mb-3">
+                                <i class="fas fa-bolt fa-3x text-primary"></i>
+                            </div>
+                            <h5>Geared Motors</h5>
+                            <p class="text-muted small">150+ Products</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Category 5 -->
+                    <div class="col-md-2 col-6 mb-4">
+                        <div class="category-card text-center">
+                            <div class="icon-container mb-3">
+                                <i class="fas fa-circle-notch fa-3x text-primary"></i>
+                            </div>
+                            <h5>Pulleys</h5>
+                            <p class="text-muted small">200+ Products</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Category 6 -->
+                    <div class="col-md-2 col-6 mb-4">
+                        <div class="category-card text-center">
+                            <div class="icon-container mb-3">
+                                <i class="fas fa-charging-station fa-3x text-primary"></i>
+                            </div>
+                            <h5>EV Products</h5>
+                            <p class="text-muted small">80+ Products</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Chat Support -->
+        <div class="chat-widget">
+            <button class="chat-toggle btn btn-primary rounded-circle">
+                <i class="fas fa-comment-dots"></i>
+            </button>
+            <div class="chat-box d-none">
+                <div class="chat-header bg-primary text-white p-3">
+                    <h5 class="mb-0">AI Support Assistant</h5>
+                    <button class="btn-close btn-close-white"></button>
+                </div>
+                <div class="chat-body p-3">
+                    <div class="message bot">
+                        <div class="message-content">
+                            Hi there! I'm your JK Fenner assistant. How can I help you find the right parts today?
+                        </div>
+                        <div class="timestamp">Just now</div>
+                    </div>
+                    
+                    <!-- Messages will be appended here -->
+                </div>
+                <div class="chat-footer p-2">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Type your message...">
+                        <button class="btn btn-primary"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+                <!-- Company Info -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <img src="images/jk-fenner-logo-white.png" alt="JK Fenner Logo" height="40" class="mb-3">
+                    <p>A part of J.K. Organisation with over 125 years of heritage, providing mechanical power transmission and sealing solutions globally.</p>
+                    <div class="social-icons mt-3">
+                        <a href="https://www.facebook.com/jkfenner" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/jkfenner" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/1212226" class="text-white me-2"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://instagram.com/jkfennerofficial" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Shop -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Shop</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50">Oil Seals</a></li>
+                        <li><a href="#" class="text-white-50">Hoses</a></li>
+                        <li><a href="#" class="text-white-50">Gear Boxes</a></li>
+                        <li><a href="#" class="text-white-50">Geared Motors</a></li>
+                        <li><a href="#" class="text-white-50">Pulleys</a></li>
+                        <li><a href="#" class="text-white-50">Power Transmission Belts</a></li>
+                        <li><a href="#" class="text-white-50">EV Products</a></li>
+                    </ul>
+                </div>
+                
+                <!-- About Us -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>About Us</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50">Company</a></li>
+                        <li><a href="#" class="text-white-50">Vision & Mission</a></li>
+                        <li><a href="#" class="text-white-50">Manufacturing</a></li>
+                        <li><a href="#" class="text-white-50">Quality Policy</a></li>
+                        <li><a href="#" class="text-white-50">Careers</a></li>
+                        <li><a href="#" class="text-white-50">News & Media</a></li>
+                        <li><a href="contact.html" class="text-white-50">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Customer Support -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Customer Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50">FAQ</a></li>
+                        <li><a href="#" class="text-white-50">Shipping Policy</a></li>
+                        <li><a href="#" class="text-white-50">Returns & Exchanges</a></li>
+                        <li><a href="#" class="text-white-50">Payment Terms</a></li>
+                        <li><a href="#" class="text-white-50">Warranty</a></li>
+                        <li><a href="#" class="text-white-50">Track Order</a></li>
+                    </ul>
+                    
+                    <!-- Download App -->
+                    <div class="mt-4">
+                        <h5>Download Our App</h5>
+                        <div class="d-flex mt-3">
+                            <a href="https://apps.apple.com/in/developer/jk-fenner-india-ltd/id1408613207" target="_blank" rel="noopener noreferrer" class="me-2">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on App Store" height="35">
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.martios4.jkfenner" target="_blank" rel="noopener noreferrer">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" height="35">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Payment Methods and Copyright -->
+            <div class="mt-4 pt-4 border-top border-secondary">
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <p class="mb-0">© 2025 JK Fenner (India) Ltd. All rights reserved.</p>
+                        <p class="small text-white-50 mb-0 mt-1">Registered Office: 3, Madurai - Melakkal Road, Kochadai, Madurai - 625 016, India</p>
+                        <p class="small text-white-50 mb-0">Tel: +91-0452-4283800</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <div class="payment-methods">
+                            <span class="me-2 text-white-50">Accepted Payments:</span>
+                            <div class="payment-icons">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/800px-Visa_Inc._logo.svg.png" alt="Visa" class="payment-icon">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/800px-Mastercard-logo.svg.png" alt="Mastercard" class="payment-icon">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/800px-American_Express_logo_%282018%29.svg.png" alt="American Express" class="payment-icon">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/RuPay-Logo.png/320px-RuPay-Logo.png" alt="RuPay" class="payment-icon">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Google_Pay_Logo.svg/512px-Google_Pay_Logo.svg.png" alt="Google Pay" class="payment-icon">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/124px-PayPal.svg.png" alt="PayPal" class="payment-icon">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Apple_Pay_logo.svg/640px-Apple_Pay_logo.svg.png" alt="Apple Pay" class="payment-icon">
+                            </div>
+                        </div>
+                        <p class="small text-white-50 mt-2">Website designed by Om Shrivastava</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
