@@ -163,6 +163,7 @@ a:hover {
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--box-shadow);
+    height: 50px;
 }
 
 .number-plate-flag {
@@ -190,12 +191,22 @@ a:hover {
     font-weight: bold;
     padding-left: 15px;
     box-shadow: none !important;
+    height: 100%;
 }
 
 .search-btn {
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
     border: none;
     padding: 0.5rem 1.25rem;
+    height: 100%;
+    margin: 0;
+    flex-shrink: 0;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #country-flag-dropdown .dropdown-item {
@@ -478,38 +489,45 @@ footer ul li a:hover {
 
 @media (max-width: 768px) {
     .vehicle-search .card {
-        margin-bottom: 15px;
+        border-radius: 10px;
     }
     
     .chat-box {
-        width: 300px;
+        width: 100%;
     }
     
     .product-card .card-img-top {
-        height: 150px;
+        height: 180px;
     }
     
     .category-card {
-        padding: 15px;
+        margin-bottom: 20px;
     }
     
     .icon-container {
-        padding: 10px;
+        margin-bottom: 15px;
     }
     
     .indian-number-plate {
-        flex-direction: column;
+        height: 46px;
     }
     
     .number-plate-flag {
-        border-right: none;
-        border-bottom: 1px solid #ddd;
-        width: 100%;
-        padding: 5px;
+        padding: 4px 6px;
+        min-width: 36px;
+    }
+    
+    .number-plate-input {
+        font-size: 14px;
+    }
+    
+    .search-btn {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.9rem;
     }
     
     .payment-methods {
-        align-items: center;
+        margin-top: 1rem;
     }
     
     .payment-icons {
@@ -521,7 +539,7 @@ footer ul li a:hover {
     }
     
     .header-logo {
-        max-height: 28px;
+        max-height: 32px;
     }
 }
 
@@ -608,4 +626,142 @@ footer ul li a:hover {
 
 .vehicle-parts-finder .btn-primary:hover::after {
     left: 100%;
+}
+
+/* Why Choose Us Section Styles */
+.why-choose-us {
+    background-color: #f8f9fa;
+}
+
+.why-choose-us .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-choose-us .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.why-choose-us .icon-container {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(var(--primary-rgb), 0.1);
+    border-radius: 50%;
+}
+
+.trust-indicators {
+    background: linear-gradient(to right, rgba(var(--primary-rgb), 0.05), rgba(var(--primary-rgb), 0.1));
+}
+
+.trust-indicators i {
+    font-size: 1.2rem;
+}
+
+.trust-indicators small {
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* Newsletter Section Styles */
+.newsletter-section {
+    background: linear-gradient(135deg, #0A4D68, #088395);
+}
+
+.newsletter-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter-form .input-group {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter-form .input-group-text {
+    background: transparent;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    color: #666;
+}
+
+.newsletter-form .input-group-text i {
+    font-size: 1.2rem;
+}
+
+.newsletter-form .form-control {
+    border: none;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    background: transparent;
+    color: #333;
+}
+
+.newsletter-form .form-control:focus {
+    box-shadow: none;
+    background: transparent;
+}
+
+.newsletter-form .form-control::placeholder {
+    color: #999;
+}
+
+.newsletter-form .btn {
+    border-radius: 50px !important;
+    padding: 0.75rem 2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background-color: #FF6B6B;
+    color: white;
+    border: none;
+    margin: 0.5rem;
+}
+
+.newsletter-form .btn:hover {
+    transform: translateX(5px);
+    background-color: #FF5252;
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.newsletter-form .fa-arrow-right {
+    transition: transform 0.3s ease;
+}
+
+.newsletter-form .btn:hover .fa-arrow-right {
+    transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+    .newsletter-container {
+        padding: 2rem !important;
+    }
+    
+    .newsletter-form .input-group {
+        flex-direction: column;
+    }
+    
+    .newsletter-form .input-group-text {
+        border-radius: 50px 50px 0 0 !important;
+        padding: 0.5rem 1.25rem;
+    }
+    
+    .newsletter-form .form-control {
+        border-radius: 0 !important;
+        padding: 0.5rem 1.25rem;
+    }
+    
+    .newsletter-form .btn {
+        border-radius: 0 0 50px 50px !important;
+        margin: 0;
+        width: 100%;
+        padding: 0.75rem;
+    }
 } 
